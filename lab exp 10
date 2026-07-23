@@ -1,0 +1,14 @@
+import pandas as pd
+
+# Monthly sales data
+data = {
+    "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "Sales": [1200, 1500, 1800, 1700, 2000, 2200]
+}
+
+# Create DataFrame
+sales_data = pd.DataFrame(data)
+
+# Display the DataFrame
+print("Monthly Sales Data")
+print(sales_data)
