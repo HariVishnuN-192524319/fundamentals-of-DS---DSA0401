@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Create Dataset
+df = pd.DataFrame({
+    "Day": [1, 2, 3, 4, 5, 6],
+    "Closing Price": [100, 105, 98, 110, 102, 108]
+})
+
+# Display Dataset
+print("Stock Data")
+print(df)
+
+# Calculate variability
+variability = df["Closing Price"].std()
+
+print("\nVariability of Stock Prices:", round(variability, 2))
+
+# Provide Insight
+if variability > 5:
+    print("Insight: Stock prices are highly volatile.")
+else:
+    print("Insight: Stock prices are relatively stable.")
