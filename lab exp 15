@@ -1,0 +1,37 @@
+import pandas as pd
+
+# Temperature dataset
+data = {
+    "City": ["Chennai", "Coimbatore", "Madurai"],
+    "Day1": [30, 25, 32],
+    "Day2": [32, 26, 35],
+    "Day3": [31, 24, 34],
+    "Day4": [33, 25, 36]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Select only temperature columns
+temp = df.iloc[:, 1:]
+
+# Calculate Mean Temperature
+df["Mean"] = temp.mean(axis=1)
+
+# Calculate Standard Deviation
+df["Standard Deviation"] = temp.std(axis=1)
+
+# Calculate Temperature Range
+df["Range"] = temp.max(axis=1) - temp.min(axis=1)
+
+# Display Results in Table
+print("Temperature Analysis")
+print(df[["City", "Mean", "Standard Deviation", "Range"]])
+
+# City with Highest Temperature Range
+highest_range = df.loc[df["Range"].idxmax(), "City"]
+print("\nCity with Highest Temperature Range:", highest_range)
+
+# City with Lowest Standard Deviation
+consistent_city = df.loc[df["Standard Deviation"].idxmin(), "City"]
+print("City with Most Consistent Temperature:", consistent_city)
