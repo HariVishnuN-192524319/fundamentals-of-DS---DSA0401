@@ -1,14 +1,12 @@
 import pandas as pd
-
-# Monthly sales data
-data = {
-    "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-    "Sales": [1200, 1500, 1800, 1700, 2000, 2200]
-}
-
-# Create DataFrame
-sales_data = pd.DataFrame(data)
-
-# Display the DataFrame
+import matplotlib.pyplot as plt
+sales_data = pd.read_csv("monthly_sales.csv")
 print("Monthly Sales Data")
 print(sales_data)
+plt.figure(figsize=(8,5))
+plt.plot(sales_data["Month"], sales_data["Sales"], marker='o')
+plt.title("Monthly Sales Data")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.grid(True)
+plt.show()
