@@ -1,6 +1,8 @@
-file = open("sample_text.txt", "r")
-text = file.read().lower()   # Convert text to lowercase
-file.close()
+# HARI VISHNU N
+# 192524319
+import pandas as pd
+data = pd.read_csv("sample_text.csv")
+text = " ".join(data["Text"].astype(str)).lower()
 for ch in ".,!?;:":
     text = text.replace(ch, "")
 words = text.split()
