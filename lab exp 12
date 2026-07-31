@@ -1,19 +1,19 @@
+import pandas as pd
 import matplotlib.pyplot as plt
-
-months = ["Jan","Feb","Mar","Apr","May","Jun"]
-temperature = [25,27,30,32,35,33]
-rainfall = [20,30,40,60,80,70]
-
-# Line Plot
-plt.plot(months, temperature)
+weather_data = pd.read_csv("weather_data.csv")
+print("Monthly Temperature and Rainfall Data")
+print(weather_data)
+plt.figure(figsize=(8,5))
+plt.plot(weather_data["Month"], weather_data["Temperature"], marker='o')
 plt.title("Monthly Temperature")
-plt.xlabel("Months")
-plt.ylabel("Temperature")
+plt.xlabel("Month")
+plt.ylabel("Temperature (°C)")
+plt.grid(True)
 plt.show()
-
-# Scatter Plot
-plt.scatter(months, rainfall)
+plt.figure(figsize=(8,5))
+plt.scatter(weather_data["Month"], weather_data["Rainfall"])
 plt.title("Monthly Rainfall")
-plt.xlabel("Months")
-plt.ylabel("Rainfall")
+plt.xlabel("Month")
+plt.ylabel("Rainfall (mm)")
+plt.grid(True)
 plt.show()
