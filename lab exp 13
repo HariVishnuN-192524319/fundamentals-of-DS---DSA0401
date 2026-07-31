@@ -1,22 +1,23 @@
 import pandas as pd
 
-# Create Dataset
-df = pd.DataFrame({
-    "Day": [1, 2, 3, 4, 5, 6],
-    "Closing Price": [100, 105, 98, 110, 102, 108]
-})
+# Read the CSV file
+stock_data = pd.read_csv("stock_prices.csv")
 
-# Display Dataset
-print("Stock Data")
-print(df)
+# Display the dataset
+print("Stock Price Data")
+print(stock_data)
 
-# Calculate variability
-variability = df["Closing Price"].std()
+# Calculate statistical measures
+mean_price = stock_data["Closing_Price"].mean()
+max_price = stock_data["Closing_Price"].max()
+min_price = stock_data["Closing_Price"].min()
+std_dev = stock_data["Closing_Price"].std()
+variance = stock_data["Closing_Price"].var()
 
-print("\nVariability of Stock Prices:", round(variability, 2))
-
-# Provide Insight
-if variability > 5:
-    print("Insight: Stock prices are highly volatile.")
-else:
-    print("Insight: Stock prices are relatively stable.")
+# Display results
+print("\nStock Price Analysis")
+print("Average Closing Price :", mean_price)
+print("Maximum Closing Price :", max_price)
+print("Minimum Closing Price :", min_price)
+print("Standard Deviation    :", std_dev)
+print("Variance              :", variance)
