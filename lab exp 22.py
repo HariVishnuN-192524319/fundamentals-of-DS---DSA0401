@@ -2,7 +2,7 @@ import pandas as pd
 from scipy import stats
 
 # Read the data from CSV
-df = pd.read_csv("blood_pressure.csv")
+df = pd.read_csv("blood_pressures.csv")
 
 # Separate Drug and Placebo groups
 drug = df[df["Group"] == "Drug"]["Reduction"]
