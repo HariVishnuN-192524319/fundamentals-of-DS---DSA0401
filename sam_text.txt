@@ -1,0 +1,3 @@
+Python is easy to learn. Python is powerful.
+Data analysis with Python is interesting.
+Python helps in data science.
